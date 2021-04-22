@@ -9,7 +9,7 @@ import (
 
 func main() {
     service := micro.NewService(
-        micro.Name("go.micro.foo.breaker.demo"),
+        micro.Name("go.micro.service.hystrix.demo"),
         // 只需要在创建 service 时候指定 hystrix 插件，系统便有了自动熔断能力
         micro.WrapClient(hystrix.NewClientWrapper()),
     )

@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+service House {
+    rpc Build(RequestData) returns (ResponseMsg){}
+    rpc GetHouse(RequestData) returns (ResponseMsg){}
+}
+
+message RequestData {
+    int32 id = 1;
+    string name = 2;
+}
+
+message ResponseMsg {
+    string msg = 1;
+}

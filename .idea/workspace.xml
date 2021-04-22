@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5f1d358-dc36-4b77-86ca-8392c282dd6f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/circuitbreaker/wrapper/wrappers/hystrix.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuitbreaker/simple/demo.go" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/simple/demo.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,11 +47,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\work\mygo\go-micro-demos\circuitbreaker\wrapper\wrappers" />
       <recent name="D:\work\mygo\go-micro-demos\circuitbreaker\simple" />
       <recent name="D:\work\mygo\go-micro-demos\pubsub\rabbitmqpubsub\config" />
       <recent name="D:\work\mygo\go-micro-demos\pubsub\rabbitmqpubsub" />
       <recent name="D:\work\mygo\go-micro-demos\etcdcluster" />
-      <recent name="D:\work\mygo\go-micro-demos\gin-consul\router" />
     </key>
   </component>
   <component name="RunDashboard">

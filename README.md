@@ -1,10 +1,12 @@
 # go-micro 微服务框架练习的例子
 
->go 1.13
+>go v1.13
+>
+>go-micro v2.9.1
 
 ## 目录
 
-- 01：greeter，手动开始写一个简单 go-micro 例子。
+- 01：greeter，手动开始写一个简单 go-micro 例子，结合 etcd。
 - 02：hello，用 micro 自动生成服务例子。
 - 03：http，go-micro 结合 http，gin 的例子。
 - 04：gin-consul，gin 结合 consul 实现服务注册和服务发现的小例子。
