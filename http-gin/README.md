@@ -109,20 +109,23 @@ go run server/main.go --server_address :8002
 ![测试图](../imgs/gin2-post-test.png)
 
 
+测试路由 v2 ：
 
-同样可以在 postman 上测试 GET http://localhost:8002/v2/house/onehouse，返回如下数据：
+同样可以在 postman 上测试，
+ 
+测试 v2 GET， http://localhost:8002/v2/house/onehouse，返回如下数据：
 
    ```shell script
 [GET] req name: %!(EXTRA string=onehouse)
    ```
 
 
-
-测试 POST http://localhost:8002/v2/house ， 如下：
+测试 v2 POST， http://localhost:8002/v2/house ， 如下：
 
 ![gin2-v2-housetest](../imgs/gin2-post-v2-housetest.png)
 
-3. 写一个客户端程序：
+
+3. 客户端程序请求：
 
    用客户端程序来随机选择一个服务地址，然后发起 http 请求。
 
@@ -139,3 +142,9 @@ go run server/main.go --server_address :8002
 ```
 
    
+
+## 访问图
+
+最后来一张架构图，访问顺序看的就比较清楚了：
+
+![rest-registry-arch-image](../imgs/rest-registry-full-image.png)

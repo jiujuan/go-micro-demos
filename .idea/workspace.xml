@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e5f1d358-dc36-4b77-86ca-8392c282dd6f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/broker/rabbitmq/config/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/broker/rabbitmq/config/config.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/http-gin/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/http-gin/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/http-gin/gin2/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/http-gin/gin2/server/main.go" afterDir="false" />
     </list>

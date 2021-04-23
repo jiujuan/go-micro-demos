@@ -36,6 +36,7 @@ func main() {
         })
     })
 
+    // 也可以是多路由分组
     GroupV2 := ginRouter.Group("/v2")
     {
         GroupV2.GET("/house/:name", func(ctx *gin.Context) {
