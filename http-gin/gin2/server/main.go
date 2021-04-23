@@ -5,7 +5,7 @@ import (
     "github.com/micro/go-micro/v2/registry"
     "github.com/micro/go-micro/v2/web"
     "github.com/micro/go-plugins/registry/consul/v2"
-    "go-micro-demos/http/gin2/service"
+    "go-micro-demos/http-gin/gin2/service"
     "log"
     "net/http"
 )

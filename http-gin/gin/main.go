@@ -19,6 +19,7 @@ func main() {
         web.Metadata(map[string]string{"data": "hello world"}), // 可以携带一些信息
         web.Handler(ginRouter), // gin 路由
     )
+    service.Init()
     // 开始运行
     if err := service.Run(); err != nil {
         log.Println(err.Error())
