@@ -162,6 +162,6 @@ mySelector := selector.NewSelector(
 
 ## 访问图
 
-最后来一张架构图，访问顺序看的就比较清楚了：
+最后来一张访问图，看的就比较清楚了：
 
-![rest-registry-arch-image](../imgs/rest-registry-full-image.png)
+![rest-registry-arch-image](../imgs/rest-gin-srv-handle.png)
