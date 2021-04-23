@@ -9,8 +9,8 @@ const (
 )
 
 type House struct {
-    ID int
-    Name string
+    ID int `json:"id" form:"id"`
+    Name string `json:"name" form:"name"`
 }
 
 type Req struct {

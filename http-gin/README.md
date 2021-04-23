@@ -120,5 +120,9 @@ go run server/main.go --server_address :8002
  map[data:[map[ID:10 Name:house name 10] map[ID:11 Name:house name 11] map[ID:12 Name:house name 12] map[ID:13 Name:house name 13] map[ID:14 Name:house name 14]] msg:success]
 ```
    
-   
-   
+   同样可以在 postman 上测试 http://localhost:8002/v2/house/onehouse，
+   会返回如下数据：
+   ```shell script
+[GET] req name: %!(EXTRA string=onehouse)
+```
+

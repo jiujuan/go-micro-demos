@@ -1,6 +1,7 @@
 package main
 
 import (
+    "fmt"
     "github.com/gin-gonic/gin"
     "github.com/micro/go-micro/v2/registry"
     "github.com/micro/go-micro/v2/web"
@@ -18,7 +19,7 @@ func main() {
         }
     })
 
-    // gin router 初始化路由
+    // gin 初始化路由
     ginRouter := gin.Default()
     // 路由分组
     GroupV1 := ginRouter.Group("/v1")
@@ -34,6 +35,25 @@ func main() {
             "msg": "success",
         })
     })
+
+    GroupV2 := ginRouter.Group("/v2")
+    {
+        GroupV2.GET("/house/:name", func(ctx *gin.Context) {
+            name := ctx.Param("name")
+            ctx.String(http.StatusOK, "[GET] req name: ", name)
+        })
+        GroupV2.POST("/house", func(ctx *gin.Context) {
+            house := new(service.House)
+            err := ctx.Bind(house)
+            if err != nil {
+                fmt.Println(err)
+                return
+            }
+            ctx.JSON(http.StatusOK, gin.H{
+                "data": fmt.Sprintf("%d - %s", house.ID, house.Name),
+            })
+        })
+    }
 
     // 用 go-micro 里的 web 创建 server
     server := web.NewService(

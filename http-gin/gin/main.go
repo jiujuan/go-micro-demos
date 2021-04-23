@@ -13,7 +13,8 @@ func main() {
     ginRouter.GET("/hello", func(ctx *gin.Context) {
         ctx.String(http.StatusOK, "hello gin!")
     })
-    // 初始化 go-micro
+
+    // 初始化 go-micro 的 web service
     service := web.NewService(
         web.Address(":8080"),  // http 端口
         web.Metadata(map[string]string{"data": "hello world"}), // 可以携带一些信息
