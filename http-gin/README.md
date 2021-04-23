@@ -109,10 +109,11 @@ go run server/main.go --server_address :8002
 ![测试图](../imgs/gin2-post-test.png)
 
 
+
 测试路由 v2 ：
 
 同样可以在 postman 上测试，
- 
+
 测试 v2 GET， http://localhost:8002/v2/house/onehouse，返回如下数据：
 
    ```shell script
@@ -127,11 +128,27 @@ go run server/main.go --server_address :8002
 
 3. 客户端程序请求：
 
-   用客户端程序来随机选择一个服务地址，然后发起 http 请求。
+   用客户端程序来随机选择一个服务地址，然后发起 http 请求。我们用 go-micro 插件里的 http (github.com/micro/go-plugins/client/http/v2) 请求服务，轮询来请求服务。
 
-   client/main.go
-
+   ```go
+mySelector := selector.NewSelector(
+       // 服务注册中心地址
+       selector.Registry(consulReg),
+       // 选择轮询算法
+       selector.SetStrategy(selector.RoundRobin),
+   )
+   
+   newClient := microhttp.NewClient(
+       client.Selector(mySelector),
+       client.ContentType("application/json"),
+   )
+   ```
+   
+   gin2/client/main.go
+   
    详细代码见 github。
+   
+   
    
    运行程序：go run client/main.go ， 多运行几次，就会随机出现 8001,8002 的服务
 ```shell script
