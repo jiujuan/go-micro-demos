@@ -14,7 +14,7 @@ type House struct {
 }
 
 type Req struct {
-    Num int `form:"num"`
+    Num int `json:"num" form:"num"`
 }
 
 // 初始化结构体

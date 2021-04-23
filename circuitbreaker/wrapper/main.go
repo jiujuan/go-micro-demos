@@ -17,7 +17,7 @@ import (
 func main() {
     consulReg := consul.NewRegistry(registry.Addrs("127.0.0.1:8500"))
     service := micro.NewService(
-        micro.Name("go.micro.house.client"),
+        micro.Name("go.micro.srv.client.house"),
         micro.Registry(consulReg),
         micro.WrapClient(
             // hystrix 的 wrapper 包
@@ -29,7 +29,7 @@ func main() {
     ginHandler := gin.Default()
     // 真正运行的服务
     webServer := web.NewService(
-        web.Name("go.micro.api.house"),
+        web.Name("go.micro.web.house"),
         web.Address(":8001"),
         web.Handler(ginHandler),
         web.Registry(consulReg),
@@ -44,9 +44,9 @@ func main() {
     }
 }
 
-var service proto.HouseService
+var hservice proto.HouseService
 func webRouter(gin *gin.Engine, houseService proto.HouseService){
-    service = houseService
+    hservice = houseService
     v1 := gin.Group("/v1/house")
     {
         v1.POST("/create", buildHouse)
@@ -64,7 +64,7 @@ func buildHouse(ctx *gin.Context) {
 
     // 这里调用 HouseService 的方法(proto 生成的方法)
     // 这里模拟调用，并没有真正调用
-    service.Build(context.Background(), req)
+    hservice.Build(context.Background(), req)
 
     resp := proto.ResponseMsg{Msg: "build one house 1"}
     ctx.JSON(http.StatusOK, gin.H{
@@ -75,13 +75,13 @@ func buildHouse(ctx *gin.Context) {
 func getHouse(ctx *gin.Context) {
     req := new(proto.RequestData)
     if err := ctx.BindJSON(req); err != nil {
-        log.Println("get house param error: ", err)
+        log.Println("get house param error: ", err.Error())
         return
     }
 
-    service.GetHouse(context.Background(), req)
+    hservice.GetHouse(context.Background(), req)
 
-    resp := proto.ResponseMsg{Msg: "get one house 1"}
+    resp := proto.ResponseMsg{Msg: "get house: "+req.Name}
 
     time.Sleep( time.Second * 5)
 
