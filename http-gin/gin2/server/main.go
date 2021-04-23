@@ -58,7 +58,7 @@ func main() {
     // 用 go-micro 里的 web 创建 server
     server := web.NewService(
         web.Name("house-service"),
-        web.Handler(ginRouter),
+        web.Handler(ginRouter), // 配置 gin 路由
         web.Metadata(map[string]string{"protocol": "http"}),
         web.Registry(consulReg),
     )

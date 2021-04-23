@@ -55,24 +55,28 @@ if err := server.Run(); err != nil {
 
 ## gin2
 
-写一个复杂点的例子，consul 作为注册中心存放服务。
+结合 consul 写一个复杂点的例子，用 consul 作为注册服务中心存放服务。
+先启动 consul 服务， `consul agent --dev`
 
-1. 编写 service/house.go ，一个简单服务定义，定义建房子服务。
+1. 编写 service/house.go ，一个简单结构定义，定义一个房子结构，然后一些操作。
 
-2. 编写服务端处理程序 server/main.go
-传递的参数是 body 里 form 形式，当然也可以是 url 参数形式。
+2. 编写服务端处理程序 server/main.go 。
 
-这里的 http 运行端口，在终端来指定：
+  
+
+运行服务端程序，http 运行端口在终端命令行来指定：
 ```shell script
 go run server/main.go --server_address :8001
 go run server/main.go --server_address :8002
 ```
-上面运行了 2 个 http服务。后面注册端口，完整的地址是 192.168.0.1:8001，如果省略了前面的 ip 地址，就默认获取本地ip地址。
+上面运行了 2 个 http 服务。后面是http服务注册的端口。完整地址应该是 192.168.0.100:8001，如果省略了前面的 ip 地址，就默认获取本地 ip 地址。
 
-看看 consul 里的：
+看看 consul 里的服务：
 ![consul里的服务](../imgs/gin2-consul-services.png)
 
-用测试工具测试下，比如 postman 工具，这里 Body 选择 form-data 形式，然后填上 num ，5，
+
+
+用测试工具测试，比如 postman 工具，这里 Body 选择 form-data 形式，然后填上 num ，5，
 点击运行，就会输出下面的数据：
 
 ```json
@@ -104,6 +108,20 @@ go run server/main.go --server_address :8002
 ```
 ![测试图](../imgs/gin2-post-test.png)
 
+
+
+同样可以在 postman 上测试 GET http://localhost:8002/v2/house/onehouse，返回如下数据：
+
+   ```shell script
+[GET] req name: %!(EXTRA string=onehouse)
+   ```
+
+
+
+测试 POST http://localhost:8002/v2/house ， 如下：
+
+![gin2-v2-housetest](../imgs/gin2-post-v2-housetest.png)
+
 3. 写一个客户端程序：
 
    用客户端程序来随机选择一个服务地址，然后发起 http 请求。
@@ -119,10 +137,5 @@ go run server/main.go --server_address :8002
  
  map[data:[map[ID:10 Name:house name 10] map[ID:11 Name:house name 11] map[ID:12 Name:house name 12] map[ID:13 Name:house name 13] map[ID:14 Name:house name 14]] msg:success]
 ```
-   
-   同样可以在 postman 上测试 http://localhost:8002/v2/house/onehouse，
-   会返回如下数据：
-   ```shell script
-[GET] req name: %!(EXTRA string=onehouse)
-```
 
+   
