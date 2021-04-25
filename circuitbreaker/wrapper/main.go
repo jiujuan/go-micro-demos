@@ -8,7 +8,7 @@ import (
     "github.com/micro/go-micro/v2/web"
     "github.com/micro/go-plugins/registry/consul/v2"
     "github.com/micro/go-plugins/wrapper/breaker/hystrix/v2"
-    proto "go-micro-demos/circuitbreaker/wrapper/proto"
+    house "go-micro-demos/circuitbreaker/wrapper/proto/house"
     "log"
     "net/http"
     "time"
@@ -16,6 +16,7 @@ import (
 
 func main() {
     consulReg := consul.NewRegistry(registry.Addrs("127.0.0.1:8500"))
+    // new service
     service := micro.NewService(
         micro.Name("go.micro.srv.client.house"),
         micro.Registry(consulReg),
@@ -24,7 +25,7 @@ func main() {
             hystrix.NewClientWrapper(),
         ),
     )
-    houseService := proto.NewHouseService("go.micro.srv.house", service.Client())
+    houseService := house.NewHouseService("go.micro.srv.house", service.Client())
 
     ginHandler := gin.Default()
     // 真正运行的服务
@@ -44,8 +45,8 @@ func main() {
     }
 }
 
-var hservice proto.HouseService
-func webRouter(gin *gin.Engine, houseService proto.HouseService){
+var hservice house.HouseService
+func webRouter(gin *gin.Engine, houseService house.HouseService){
     hservice = houseService
     v1 := gin.Group("/v1/house")
     {
@@ -55,7 +56,7 @@ func webRouter(gin *gin.Engine, houseService proto.HouseService){
 }
 
 func buildHouse(ctx *gin.Context) {
-    req := new(proto.RequestData)
+    req := new(house.RequestData)
 
     if err := ctx.BindJSON(req); err != nil {
         log.Println("request param: ", err)
@@ -66,14 +67,14 @@ func buildHouse(ctx *gin.Context) {
     // 这里模拟调用，并没有真正调用
     hservice.Build(context.Background(), req)
 
-    resp := proto.ResponseMsg{Msg: "build one house 1"}
+    resp := house.ResponseMsg{Msg: "build one house 1"}
     ctx.JSON(http.StatusOK, gin.H{
         "message": resp.Msg,
     })
 }
 
 func getHouse(ctx *gin.Context) {
-    req := new(proto.RequestData)
+    req := new(house.RequestData)
     if err := ctx.BindJSON(req); err != nil {
         log.Println("get house param error: ", err.Error())
         return
@@ -81,7 +82,7 @@ func getHouse(ctx *gin.Context) {
 
     hservice.GetHouse(context.Background(), req)
 
-    resp := proto.ResponseMsg{Msg: "get house: "+req.Name}
+    resp := house.ResponseMsg{Msg: "get house: "+req.Name}
 
     time.Sleep( time.Second * 5)
 

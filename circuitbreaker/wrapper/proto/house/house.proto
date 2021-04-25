@@ -1,13 +1,14 @@
 syntax = "proto3";
 
 service House {
-    rpc Build(RequestData) returns (ResponseMsg){}
-    rpc GetHouse(RequestData) returns (ResponseMsg){}
+    rpc Build(RequestData) returns (ResponseMsg) {}
+    rpc GetHouse(RequestData) returns (ResponseMsg) {}
 }
 
 message RequestData {
     int32 id = 1;
     string name = 2;
+    int32 floor = 3;
 }
 
 message ResponseMsg {

@@ -3,12 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e5f1d358-dc36-4b77-86ca-8392c282dd6f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuitbreaker/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuitbreaker/simple/demo.go" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/simple/demo.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/http-gin/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/http-gin/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/http-gin/gin2/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/http-gin/gin2/client/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/http-gin/gin2/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/http-gin/gin2/server/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/http-gin/gin2/service/house.go" beforeDir="false" afterPath="$PROJECT_DIR$/http-gin/gin2/service/house.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuitbreaker/wrapper/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/wrapper/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuitbreaker/wrapper/proto/house.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/wrapper/proto/house/house.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuitbreaker/wrapper/proto/house.pb.micro.go" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/wrapper/proto/house/house.pb.micro.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuitbreaker/wrapper/proto/house.proto" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/wrapper/proto/house/house.proto" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,11 +48,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\work\mygo\go-micro-demos\circuitbreaker\wrapper\proto\house" />
       <recent name="D:\work\mygo\go-micro-demos\circuitbreaker\wrapper\wrappers" />
       <recent name="D:\work\mygo\go-micro-demos\circuitbreaker\simple" />
       <recent name="D:\work\mygo\go-micro-demos\pubsub\rabbitmqpubsub\config" />
       <recent name="D:\work\mygo\go-micro-demos\pubsub\rabbitmqpubsub" />
-      <recent name="D:\work\mygo\go-micro-demos\etcdcluster" />
     </key>
   </component>
   <component name="RunDashboard">
