@@ -24,14 +24,15 @@ func main() {
     // 路由分组
     GroupV1 := ginRouter.Group("/v1")
     GroupV1.Handle("POST", "/house", func(ctx *gin.Context) {
-        req := service.Req{}
+        houseNum := service.Num{}
 
-        err := ctx.Bind(&req) // 接收 body 里的信息，也可以有其他参数接收方式 ，比如：/house/:num ， param 接收
-        if err != nil || req.Num < service.HouseMinNum || req.Num > service.HouseMaxNum {
-            req = service.Req{service.HouseDefaultNum}
+        err := ctx.Bind(&houseNum) // 接收 body 里的信息，也可以有其他参数接收方式 ，比如：/house/:num ， param 接收
+        if err != nil {
+            houseNum = service.Num{service.HouseDefaultNum}
         }
+        // 这里可以进行一些逻辑处理
         ctx.JSON(http.StatusOK, gin.H{
-            "data": service.BuildHouse(req.Num),
+            "data": service.BuildHouse(houseNum.Num),
             "msg": "success",
         })
     })
@@ -41,8 +42,12 @@ func main() {
     {
         GroupV2.GET("/house/:name", func(ctx *gin.Context) {
             name := ctx.Param("name")
+
+            // 这里进行逻辑处理
+
             ctx.String(http.StatusOK, "[GET] req name: ", name)
         })
+
         GroupV2.POST("/house", func(ctx *gin.Context) {
             house := new(service.House)
             err := ctx.Bind(house)
@@ -50,6 +55,7 @@ func main() {
                 fmt.Println(err)
                 return
             }
+            // 这里进行逻辑处理
             ctx.JSON(http.StatusOK, gin.H{
                 "data": fmt.Sprintf("%d - %s", house.ID, house.Name),
             })

@@ -83,31 +83,33 @@ go run server/main.go --server_address :8002
 {
     "data": [
         {
-            "ID": 10,
-            "Name": "house name 10"
+            "ID": 1,
+            "Name": "house name 1",
+            "Floor": 10,
         },
         {
-            "ID": 11,
-            "Name": "house name 11"
+            "ID": 2,
+            "Name": "house name 2",
+             "Floor": 10,
         },
         {
-            "ID": 12,
-            "Name": "house name 12"
+            "ID": 3,
+            "Name": "house name 3",
+             "Floor": 10,
         },
         {
-            "ID": 13,
-            "Name": "house name 13"
+            "ID": 4,
+            "Name": "house name 4",
         },
         {
-            "ID": 14,
-            "Name": "house name 14"
+            "ID": 5,
+            "Name": "house name 5",
+             "Floor": 10,
         }
     ],
     "msg": "success"
 }
 ```
-![测试图](../imgs/gin2-post-test.png)
-
 
 
 测试路由 v2 ：
@@ -155,7 +157,7 @@ mySelector := selector.NewSelector(
  go run .\main.go
  f27b74d9-b437-4cd5-a25e-620d9336f4b8 map[protocol:http] 192.168.0.100:8002
  
- map[data:[map[ID:10 Name:house name 10] map[ID:11 Name:house name 11] map[ID:12 Name:house name 12] map[ID:13 Name:house name 13] map[ID:14 Name:house name 14]] msg:success]
+ map[data:[map[ID:1 Name:house name 1 Floor:10] map[ID:2 Name:house name 2 Floor:10] map[ID:3 Name:house name 3 Floor:10] map[ID:4 Name:house name 4 Floor:10] map[ID:5 Name:house name 5 Floor:10]] msg:success]
 ```
 
    

@@ -3,7 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e5f1d358-dc36-4b77-86ca-8392c282dd6f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuitbreaker/wrapper/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/wrapper/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuitbreaker/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuitbreaker/simple/demo.go" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/simple/demo.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/http-gin/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/http-gin/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/http-gin/gin2/client/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/http-gin/gin2/client/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/http-gin/gin2/server/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/http-gin/gin2/server/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/http-gin/gin2/service/house.go" beforeDir="false" afterPath="$PROJECT_DIR$/http-gin/gin2/service/house.go" afterDir="false" />
     </list>
@@ -90,7 +93,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -39,6 +39,7 @@ func main() {
     //===========上面这段代码测试获取 house-service 服务，与下面代码没有关联=========
 
     // 下面利用 go-micro 的 plugins 里的 client http 插件随机选择服务，然后发起请求
+    // 当然，我们也可以用 golang 自带的 http
     // 创建一个客户端，可以到注册中心选择服务
     newClient := microhttp.NewClient(
         client.Selector(mySelector),
@@ -52,7 +53,7 @@ func main() {
         map[string]interface{}{"num":5},
     )
     var resp map[string]interface{}
-    if err:=newClient.Call(context.Background(), req, &resp); err != nil {
+    if err := newClient.Call(context.Background(), req, &resp); err != nil {
         log.Fatal(err)
     }
 
