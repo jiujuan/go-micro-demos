@@ -44,4 +44,17 @@ func main() {
 }
 ```
 
-## wrapper
+## hystrixdo
+
+这个例子用 hystrix 限制特定的方法。具体的代码见 github。
+
+测试：
+
+先运行服务端：go run ./server/main.go
+
+在运行客户端：go run main.go
+
+用 postman 进行测试：
+结果见图
+![hustrix do test](../imgs/hystrix-do-test.png)
+

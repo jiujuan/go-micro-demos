@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5f1d358-dc36-4b77-86ca-8392c282dd6f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/circuitbreaker/hystrixdo/main.go" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/circuitbreaker/hystrixdo/server/service/house.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuitbreaker/wrapper/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/wrapper/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuitbreaker/wrapper/proto/house.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/wrapper/proto/house/house.pb.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuitbreaker/wrapper/proto/house.pb.micro.go" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/wrapper/proto/house/house.pb.micro.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/circuitbreaker/wrapper/proto/house.proto" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/wrapper/proto/house/house.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuitbreaker/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuitbreaker/wrapper/main.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuitbreaker/wrapper/proto/house/house.pb.go" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/hystrixdo/proto/house/house.pb.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuitbreaker/wrapper/proto/house/house.pb.micro.go" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/hystrixdo/proto/house/house.pb.micro.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/circuitbreaker/wrapper/proto/house/house.proto" beforeDir="false" afterPath="$PROJECT_DIR$/circuitbreaker/hystrixdo/proto/house/house.proto" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
