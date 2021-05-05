@@ -1,4 +1,4 @@
-## tracing: 链路追踪
+## tracing 链路追踪
 
 由于微服务个数多，调用复杂，这时候对微服务错误的诊断也变得复杂起来，怎么应对这种新情况？
 
@@ -40,11 +40,30 @@ traceing 相关的论文:
 
 规范，后面这 2 个规范又合并到了 CNCF 下的 [OpenTelemetry](https://opentelemetry.io/) 。
 
-## jager
+## jager 简介
 
 [jager](https://github.com/jaegertracing) 是 Uber 开发的追踪系统，后来捐献给了 CNCF，所以它是符合 OpenTelemetry 规范的。
 
 
 
-下面我们使用 uber 的 jaeger 这个链路追踪工具。
+jager 的安装部署可以看这篇文章：[jager简单实践](https://www.cnblogs.com/jiujuan/p/13235748.html)。
+
+
+
+下面我们就使用 uber 的 jaeger 这个链路追踪工具结合 go-micro 来开发。
+
+## go-micro 例子
+
+看看 go-micro 中的 opentracing 插件，它提供了 4 中 wrapper 方法分别用于不同的服务类型：
+
+1. WrapHandler() server 中间件
+2. WrapCall() call 中间件
+3. WrapClient() client 中间件
+4. WrapSubscriber()  订阅中间件
+
+
+
+先写一个公共应用的包 tracer/jaeger.go 。
+
+
 

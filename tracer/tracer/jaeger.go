@@ -7,6 +7,7 @@ import (
     "io"
     "time"
 )
+
 func NewJaeger(serviceName string, addr string) (opentracing.Tracer, io.Closer, error) {
     config := jaegercfg.Configuration{
         ServiceName: serviceName,
