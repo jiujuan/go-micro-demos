@@ -3,7 +3,7 @@ package main
 import (
     "github.com/micro/go-micro/v2"
     "github.com/micro/go-plugins/wrapper/trace/opentracing/v2"
-    "go-micro-demos/tracer/tracer"
+    "go-micro-demos/tracing/tracer"
     "log"
 )
 

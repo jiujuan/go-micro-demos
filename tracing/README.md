@@ -7,7 +7,7 @@
 (Metrics) 和分布式追踪系统（Tracing).
 
 - Logging：用于记录日志信息。比如业务信息，错误信息。
-- Metrics：记录聚合的信息。比如http的请求个数。
+- Metrics：记录聚合的信息。比如http的请求个数。Metrics 有 5 种基本的度量类型：Gauges（度量）、Counters（计数器）、 Histograms（直方图）、 Meters（TPS计算器）、Timers（计时器）。
 - Tracing：记录请求范围的信息，链路追中信息。比如一次 rpc 的调用过程和耗时。
 
 
@@ -20,7 +20,7 @@
 
 上图所表示的每一个领域都有相应的软件来实现其功能：
 
-1. Metrics - Prometheus
+1. Metrics - 时序数据库，基于时序的监控系统 Prometheus
 
 2. Logging - ELK
 
@@ -67,3 +67,4 @@ jager 的安装部署可以看这篇文章：[jager简单实践](https://www.cnb
 
 
 
+参考例子：https://zhuanlan.zhihu.com/p/264302003
